@@ -25,14 +25,14 @@ An interactive, cinematic, and romantic web experience designed for heartfelt lo
 
 ## 📂 Project Structure
 
-`	ext
+```text
 ├── index.html                  # Main application markup & structure
 ├── styles.css                  # Modern CSS animations, glassmorphism & styling
 ├── script.js                   # Interactive logic, audio synth, and particle canvas
 ├── .gitignore                  # Git ignore rules for system & IDE files
 ├── README.md                   # Project documentation
 └── *.png                       # Romantic illustration & memory assets
-`
+```
 
 ---
 
