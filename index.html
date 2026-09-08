@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A cinematic romantic love story and proposal experience — beautiful, interactive, and unforgettable.">
+  <title>Forever With You 💕 — Written In The Stars</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Dancing+Script:wght@400;600;700&family=Nunito:wght@300;400;600;700&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="theme-rose">
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+
+  <canvas id="ambientCanvas"></canvas>
+
+  <button type="button" class="ambient-music-btn" id="soundBtn" aria-label="Toggle romantic audio" title="Click for romantic music & chimes">
+    <span id="soundIcon">🎵</span>
+  </button>
+
+  <nav class="scroll-indicator" id="scrollNav" aria-label="Scene navigation">
+    <div class="scroll-dot active" data-scene="0" title="1. Welcome"></div>
+    <div class="scroll-dot" data-scene="1" title="2. The Love Letter"></div>
+    <div class="scroll-dot" data-scene="2" title="3. The Proposal"></div>
+    <div class="scroll-dot" data-scene="3" title="4. Our Memories"></div>
+    <div class="scroll-dot" data-scene="4" title="5. Forever &amp; Always"></div>
+  </nav>
+
+  <!-- Page 1: Welcome -->
+  <section class="scene scene-page-1" id="scene-1">
+    <div class="ambient-glow-orb orb-1" aria-hidden="true"></div>
+    <div class="ambient-glow-orb orb-2" aria-hidden="true"></div>
+    <div class="big-heart-bg" aria-hidden="true">♡</div>
+    <div class="petals-container" id="petalsContainer" aria-hidden="true"></div>
+
+    <div class="scene-1-content">
+      <div class="tagline-badge reveal">
+        <span class="badge-sparkle">✨</span>
+        <span>A Love Written In The Stars</span>
+        <span class="badge-sparkle">✨</span>
+      </div>
+
+      <h1 class="opening-title reveal reveal-delay-1">
+        Forever<br><span>With You</span>
+      </h1>
+
+      <div class="typewriter-wrap">
+        <p class="typewriter-text reveal reveal-delay-2">
+          <span id="typedText"></span><span class="typed-cursor">|</span>
+        </p>
+      </div>
+
+      <p class="welcome-sub-desc reveal reveal-delay-2">
+        Every love story is special, but ours is my greatest blessing. Take my hand...
+      </p>
+
+      <button type="button" class="scroll-hint-btn reveal reveal-delay-3" id="scrollHintBtn" data-target="scene-2" aria-label="Begin Our Journey">
+        <span>Begin Our Journey 💌</span>
+        <span class="scroll-arrow"></span>
+      </button>
+    </div>
+
+    <div class="scene-transition-divider" aria-hidden="true">
+      <div class="divider-glow"></div>
+    </div>
+  </section>
+
+  <!-- Page 2: Love Letter -->
+  <section class="scene scene-page-2" id="scene-2">
+    <div class="ambient-glow-orb orb-3" aria-hidden="true"></div>
+    <div class="letter-particles-container" id="letterParticles" aria-hidden="true"></div>
+
+    <div class="scene-2-content">
+      <p class="section-label reveal">💌 Straight From My Heart</p>
+      <h2 class="section-title reveal reveal-delay-1">The Love Letter</h2>
+
+      <div class="letter-story-grid">
+        <div class="letter-col">
+          <div class="envelope-wrap reveal reveal-delay-2">
+            <button type="button" class="envelope" id="envelope" aria-label="Click to open the love letter">
+              <span class="envelope-flap"></span>
+              <span class="envelope-body">
+                <span class="envelope-bottom-left"></span>
+                <span class="envelope-bottom-right"></span>
+                <span class="wax-seal" aria-hidden="true">♥</span>
+              </span>
+            </button>
+            <p class="envelope-hint reveal reveal-delay-3">
+              Tap the wax seal to unfold my secret 💌
+            </p>
+          </div>
+
+          <div class="letter-paper" id="letterPaper">
+            <div class="corner-rose" aria-hidden="true">🌹</div>
+            <div class="letter-lines">
+              <span class="letter-heading" id="letterHeading"></span>
+              <p class="letter-body" id="letterBody"></p>
+              <p class="letter-sign" id="letterSign">Yours in every lifetime 💕</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button type="button" class="scene-nav-next reveal reveal-delay-4" data-target="scene-3" aria-label="Go to Proposal">
+        <span>A Question for You 🌹</span>
+        <i class="fa-solid fa-arrow-down"></i>
+      </button>
+    </div>
+
+    <div class="scene-transition-divider" aria-hidden="true">
+      <div class="divider-glow"></div>
+    </div>
+  </section>
+
+  <!-- Page 3: Proposal -->
+  <section class="scene scene-page-3" id="scene-3">
+    <div class="proposal-particles-container" id="proposalParticles" aria-hidden="true"></div>
+    <div class="confetti-container" id="confettiContainer" aria-hidden="true"></div>
+
+    <div class="scene-3-content">
+      <p class="section-label reveal">🌹 The Question of a Lifetime</p>
+
+      <div class="story-phase-stepper reveal reveal-delay-1" id="phaseStepper">
+        <div class="phase-step active" data-phase="0" title="First Glance">
+          <span class="step-num">✨</span>
+          <label>First Glance</label>
+        </div>
+        <div class="phase-line" id="phaseLine1"></div>
+        <div class="phase-step" data-phase="1" title="The Proposal">
+          <span class="step-num">💍</span>
+          <label>The Question</label>
+        </div>
+        <div class="phase-line" id="phaseLine2"></div>
+        <div class="phase-step" data-phase="2" title="The Answer">
+          <span class="step-num">🤗</span>
+          <label>The Embrace</label>
+        </div>
+        <div class="phase-line" id="phaseLine3"></div>
+        <div class="phase-step" data-phase="3" title="Forever">
+          <span class="step-num">💖</span>
+          <label>Our Forever</label>
+        </div>
+      </div>
+
+      <div class="proposal-dialogue-stage reveal reveal-delay-2" id="proposalDialogueStage">
+        <div class="headside-speech-bubble bubble-left" id="charSpeechBubble" style="display: none;">
+          <div class="bubble-header">
+            <span class="bubble-avatar" id="speakerAvatar">👦</span>
+            <span class="bubble-speaker-name" id="speakerName">Him</span>
+          </div>
+          <p class="bubble-text" id="dialogueText">
+            "From the day we met, my heart knew you were the one 💕"
+          </p>
+          <div class="bubble-tail" id="bubbleTail"></div>
+        </div>
+      </div>
+
+      <div class="proposal-hero-frame reveal reveal-delay-2" id="proposalHeroFrame">
+        <div class="proposal-hero-glow" id="proposalHeroGlow"></div>
+        <div class="character-ground-aura"></div>
+
+        <div class="proposal-img-wrap">
+          <img src="girl%20and%20boy%20face%20to%20face.png" alt="Romantic Story Moment" id="proposalStoryImg" class="proposal-hero-img" loading="eager">
+        </div>
+
+        <span class="proposal-sparkle-badge" id="proposalStoryBadge">💫 Looking Deep Into Your Eyes</span>
+      </div>
+
+      <div class="proposal-dynamic-action reveal reveal-delay-3" id="dynamicActionZone">
+        <!-- Phase 0: Start Button placed down side of characters -->
+        <div class="phase-action-box" id="phase0Action">
+          <button type="button" class="btn-start-conversation" id="btnStartConversation">
+            <span class="btn-icon">💌</span>
+            <span>Hear What My Heart Says ✨</span>
+          </button>
+        </div>
+
+        <div class="phase-action-box" id="phase1Action" style="display: none;">
+          <div class="auto-talking-indicator">
+            <span class="pulse-dot"></span>
+            <span>Speaking from the heart...</span>
+          </div>
+          <button type="button" class="btn-skip-story" id="btnSkipDialogue" title="Skip directly to the question">
+            <span>Skip to The Question 🌹</span>
+            <i class="fa-solid fa-forward"></i>
+          </button>
+        </div>
+
+        <div class="phase-action-box" id="phase2Action" style="display: none;">
+          <h2 class="finale-title" id="proposalTitle">Will You Be My Girlfriend?</h2>
+          <p class="finale-sub" id="proposalSub">"I only need every tomorrow with you." 🌹</p>
+
+          <div class="proposal-action-zone" id="proposalZone">
+            <div class="buttons-wrap" id="buttonsWrap">
+              <button type="button" class="btn-finale-yes" id="btnYes">
+                <span>YES! 💖</span>
+                <small>With all my heart, YES! 🌹</small>
+              </button>
+
+              <button type="button" class="btn-finale-no" id="btnNo">
+                <span id="noText">No</span>
+              </button>
+            </div>
+            <div class="dodge-tooltip" id="dodgeTooltip">Aise kaise mana kar sakti ho! 😉</div>
+          </div>
+        </div>
+
+        <div class="phase-action-box" id="phase3Action" style="display: none;">
+          <div class="hug-celebration-badge">
+            <span>🎉 She Said YES! 💕</span>
+          </div>
+          <p class="hug-celebration-text">"Holding you in my arms forever... 🤗"</p>
+        </div>
+
+        <div class="phase-action-box" id="phase4Action" style="display: none;">
+          <h2 class="finale-title">Our Story Begins Today 💕</h2>
+          <p class="finale-sub">"From this day forward, every heartbeat belongs to you." ✨</p>
+          <button type="button" class="scene-nav-next reveal" data-target="scene-4" aria-label="View Memories">
+            <span>Relive Our Captured Moments 📸</span>
+            <i class="fa-solid fa-arrow-down"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="scene-transition-divider" aria-hidden="true">
+      <div class="divider-glow"></div>
+    </div>
+  </section>
+
+  <!-- Page 4: Memories -->
+  <section class="scene scene-page-4" id="scene-4">
+    <div class="ambient-glow-orb orb-4" aria-hidden="true"></div>
+    <div class="memory-stars-container" id="memoryStars" aria-hidden="true"></div>
+
+    <div class="scene-4-content">
+      <p class="section-label reveal">📸 Every Cherished Moment</p>
+      <h2 class="section-title reveal reveal-delay-1">Moments With You</h2>
+
+      <div class="carousel-stage reveal reveal-delay-2">
+        <div class="carousel-track" id="carouselTrack">
+          <div class="carousel-card" data-index="0">
+            <span class="memory-tag-badge">🍃 Evening Strolls</span>
+            <div class="card-img-container">
+              <img src="park-walk-memory.png" alt="Walking together in the park" loading="eager">
+            </div>
+            <p class="card-caption">"When silence felt like poetry, walking hand in hand 🍂"</p>
+          </div>
+
+          <div class="carousel-card active" data-index="1">
+            <span class="memory-tag-badge">🌸 Carefree Smiles</span>
+            <div class="card-img-container">
+              <img src="swing-memory.png" alt="Happy moments on the swing" loading="eager">
+            </div>
+            <p class="card-caption">"Your laughter turned an ordinary afternoon into pure magic ✨"</p>
+          </div>
+
+          <div class="carousel-card" data-index="2">
+            <span class="memory-tag-badge">🌅 Sunset Whispers</span>
+            <div class="card-img-container">
+              <img src="lake-bench-memory.png" alt="Sitting together by the lake" loading="eager">
+            </div>
+            <p class="card-caption">"Watching the sunset glow, wishing time would freeze right there 🌅"</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-controls reveal reveal-delay-3">
+        <button type="button" class="carousel-btn" id="prevBtn" aria-label="Previous memory">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <div class="carousel-dots" id="carouselDots">
+          <div class="carousel-dot" data-dot="0"></div>
+          <div class="carousel-dot active" data-dot="1"></div>
+          <div class="carousel-dot" data-dot="2"></div>
+        </div>
+        <button type="button" class="carousel-btn" id="nextBtn" aria-label="Next memory">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      </div>
+
+      <button type="button" class="scene-nav-next reveal reveal-delay-4" data-target="scene-5" aria-label="Go to Grand Finale">
+        <span>Our Forever Promise 💍</span>
+        <i class="fa-solid fa-arrow-down"></i>
+      </button>
+    </div>
+
+    <div class="scene-transition-divider" aria-hidden="true">
+      <div class="divider-glow"></div>
+    </div>
+  </section>
+
+  <!-- Page 5: Grand Finale -->
+  <section class="scene scene-page-5" id="scene-5">
+    <div class="ambient-glow-orb orb-5" aria-hidden="true"></div>
+    <div class="confetti-container" id="finaleConfettiContainer" aria-hidden="true"></div>
+
+    <div class="scene-5-content">
+      <p class="section-label reveal">💍 Our Forever Promise</p>
+
+      <span class="big-heart" aria-hidden="true">💕</span>
+
+      <h2 class="finale-title reveal">Forever &amp; Always</h2>
+      <p class="finale-sub reveal reveal-delay-1">You are my greatest adventure &amp; my safest home 💕</p>
+
+      <div class="finale-divider reveal reveal-delay-2" aria-hidden="true">
+        <span></span><span class="divider-heart">♥</span><span></span>
+      </div>
+
+      <div class="finale-poem reveal reveal-delay-2">
+        <p class="poem-line" id="poemLine1"></p>
+        <p class="poem-line" id="poemLine2"></p>
+        <p class="poem-line" id="poemLine3"></p>
+        <p class="poem-line" id="poemLine4"></p>
+      </div>
+
+      <div class="quote-card finale-promise-card reveal reveal-delay-3" id="quoteCard">
+        <div class="quote-inner">
+          <span class="quote-mark">"</span>
+          <p id="loveQuote">Click below to draw a heartfelt promise from my soul to yours...</p>
+          <span class="quote-mark close-quote">"</span>
+        </div>
+        <div class="quote-counter" id="quoteCounter">Promise 1 / 8</div>
+      </div>
+
+      <button type="button" class="btn-rose reveal reveal-delay-3" id="pickRoseBtn" aria-label="Draw a love promise">
+        <span class="btn-icon">🌹</span>
+        <span>Draw a Love Promise</span>
+      </button>
+
+      <div class="finale-notes reveal reveal-delay-4">
+        <div class="note-card note-1">
+          <span>🌹</span>
+          <p>Every day with you<br>is a beautiful gift</p>
+        </div>
+        <div class="note-card note-2">
+          <span>💌</span>
+          <p>You are home<br>wherever you are</p>
+        </div>
+        <div class="note-card note-3">
+          <span>✨</span>
+          <p>I choose you<br>a thousand times over</p>
+        </div>
+      </div>
+
+      <p class="finale-signature reveal reveal-delay-4" id="finaleSignature"></p>
+
+      <div class="finale-action-buttons reveal reveal-delay-4">
+        <button type="button" class="btn-restart" id="restartBtn" aria-label="Relive Our Story from Start">
+          <i class="fa-solid fa-rotate-left"></i> Relive Our Story
+        </button>
+        <button type="button" class="btn-reload" id="reloadBtn" aria-label="Reload Entire Page">
+          <i class="fa-solid fa-arrows-rotate"></i> Reload Page 🔄
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
