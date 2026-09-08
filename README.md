@@ -39,12 +39,12 @@ An interactive, cinematic, and romantic web experience designed for heartfelt lo
 ## 🚀 Quick Start (Run Locally)
 
 1. Clone or download this repository:
-   `ash
-   git clone https://github.com/<your-username>/<your-repo-name>.git
-   cd <your-repo-name>
-   `
+   ```bash
+   git clone https://github.com/surajit8145/propose.git
+   cd propose
+   ```
 
-2. Open index.html directly in your favorite web browser (Chrome, Edge, Firefox, Safari) or use Live Server in VS Code.
+2. Open `index.html` directly in your favorite web browser (Chrome, Edge, Firefox, Safari) or use Live Server in VS Code.
 
 ---
 
@@ -55,12 +55,12 @@ You can host this project online for free using **GitHub Pages**:
 1. Push this repository to GitHub.
 2. Go to your repository on GitHub.
 3. Click on **Settings** > **Pages** (in the left sidebar).
-4. Under **Branch**, select main (or master) branch and / (root) folder.
+4. Under **Branch**, select `main` (or `master`) branch and `/ (root)` folder.
 5. Click **Save**.
 6. Wait 1-2 minutes, and your live romantic webpage will be published at:
-   `
-   https://<your-username>.github.io/<your-repo-name>/
-   `
+   ```
+   https://surajit8145.github.io/propose/
+   ```
 
 ---
 
